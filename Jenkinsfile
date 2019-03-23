@@ -1,5 +1,5 @@
 pipeline {
-	agent {jdk8}
+	agent any
 
 	stages {
 	    stage('Checkout') {
