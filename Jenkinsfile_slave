@@ -10,7 +10,7 @@ pipeline {
 		    }
 		stage('Build') {
 	        steps {
-				sh '/home/kathy/Distros/apache-maven-3.5.4/bin/mvn install'
+				sh '/home/gamut/files/apache-maven-3.6.0/bin/mvn install'
 	        }
 		}
 	}
