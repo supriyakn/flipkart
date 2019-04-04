@@ -1,4 +1,8 @@
-
-FROM tomcat:7.0
-COPY target/gamutkart.war /usr/local/tomcat/webapps
-ENTRYPOINT /usr/local/tomcat/bin/startup.sh && bash
+FROM ubuntu:16.04
+MAINTAINER "supriya"
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jdk
+ENV JAVA_HOME=/usr
+ADD apache-tomcat-8.5.38.tar.gz /root
+COPY target/gamutkart.war /root/apache-tomcat-8.5.38/webapps
+ENTRYPOINT /root/apache-tomcat-8.5.38/bin/startup.sh && bash
